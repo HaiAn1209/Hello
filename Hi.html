@@ -43,14 +43,11 @@
             text-align: center;
         }
       
-        .running {
-            animation: move 1s linear forwards;
-        }
-
-        @keyframes move {
-            to {
-                transform: translateX(1000px);
-            }
+        .moved {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50);
         }
     </style>
 
@@ -60,7 +57,19 @@
             document.getElementById("Noice").style.display = "block";
         }
         function Run(){
-            document.querySelector('.button.no').classList.add('running');
+            var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+            var buttonWidth = 100; // Chiều rộng của button
+            var buttonHeight = 40; // Chiều cao của button
+
+            var randomX = Math.floor(Math.random() * (viewportWidth - buttonWidth));
+            var randomY = Math.floor(Math.random() * (viewportHeight - buttonHeight));
+
+            var noButton = document.querySelector('input.no');
+            noButton.style.position = 'absolute';
+            noButton.style.top = randomY + 'px';
+            noButton.style.left = randomX + 'px';
         }
     </script>
 </head>
