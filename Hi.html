@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+        }
+    
+        #ques {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+    
+        input {
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        #Noice {
+            text-align: center;
+        }
+      
+        .running {
+            animation: move 1s linear forwards;
+        }
+
+        @keyframes move {
+            to {
+                transform: translateX(1000px);
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function Nice(){
+            document.getElementById("ques").style.display = "none";
+            document.getElementById("Noice").style.display = "block";
+        }
+        function Run(){
+            document.querySelector('.button.no').classList.add('running');
+        }
+    </script>
+</head>
+<body>
+    <div id="ques">
+        <p>Đi cf nhá</p>
+        <input type="button" class="button yes" value="Yes" onClick="Nice()">
+        <input type="button" class="button no" value="No" onClick="Run()">
+    </div>
+
+    <div id="Noice" style="display: none;">
+        <p>Tuyệt vời đi thôiii</p>
+        <iframe src="https://giphy.com/embed/o75ajIFH0QnQC3nCeD" width="480" height="401" style="max-width: 100%; height: auto;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+</body>
+</html>
